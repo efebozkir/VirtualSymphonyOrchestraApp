@@ -36,11 +36,24 @@ public:
 	void readInputFiles();
 
 	void playPressed();
+	void conductModeSelected();
+	void learnModeSelected();
+	void backPressed();
 
 	void setupTheVideo();
 
-	ofxPanel gui;
+	int screenWidth = 1440;
+	int screenHeight = 1080;
+	
+	// components related to main screen
+	ofxPanel guiModeSelection;
+	ofxButton conductModeButton;
+	ofxButton learnModeButton;
+	int conductMode = 0;
+	int learnMode = 0;
 
+	// Components of conduct mode
+	ofxPanel gui;
 	ofxButton play;
 	ofxButton stop;
 	ofxFloatSlider volume;
@@ -48,6 +61,18 @@ public:
 	ofxIntSlider background;
 	ofxIntSlider instruments;
 	ofVideoPlayer video;
+	ofxButton back;
+
+	// Components of learn mode
+	ofxPanel learnGui;
+	ofxButton learnPlay;
+	ofxFloatSlider learnVolume;
+	ofxFloatSlider learnSpeed;
+	ofxIntSlider learnBackground;
+	ofxIntSlider learnPattern;
+	ofxButton learnBack;
+
+	
 
 	int counter = 0;
 
